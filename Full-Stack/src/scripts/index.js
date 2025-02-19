@@ -4,12 +4,16 @@ const app = document.querySelector('#app')
 const formActions = () => {
     const form = document.querySelector('#form')
 
+    // Chamada quando o botão submit for clicado
     form.onsubmit = (event) => {
         event.preventDefault()
     }
 }
 
+// Função principal
 const startApp = () => {
+
+    // Cria o formulário no formado de HTML
     const content = `
         <form id="form">
             <input type="email" name="email" id="e-mail_input" class="e-mail" placeholder="E-mail">
@@ -19,8 +23,9 @@ const startApp = () => {
         </form>
     `
 
+    // Adiciona o formulário em um elemento (nesse caso, com o id app) que esteja no arquivo .html
     app.innerHTML = content
-    formActions()
+    formActions() // Chama a fução com as funcionalidades do formulário
 }
 
 startApp()
