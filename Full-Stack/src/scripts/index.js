@@ -4,19 +4,27 @@ const users = [
 
     {
         id: 0,
-        email: 'teste@teste.com.br',
+        email: 'teste@teste.com',
         phone: '22 999999999',
         refID: null
     },
 
     {
         id: 1,
-        email: 'user1@nlwconnect.com.br',
+        email: 'user1@nlwconnect.com',
         phone: '21 997584517',
         refID: 0
     },
 
 ]
+
+// Esta função irá retornar o objeto do array users, se o e-mail do objeto for o mesmo do getInput 
+const getUser = (userData) => {
+    
+    return users.find(  // Retorna o objeto do arrey se o valor for True
+        user =>  user.email == userData.email  // Retorna True ou False se o e-mail de um objeto do array for igual ao do getInput        
+    )  
+}
 
 // Função para resetar a configuração original
 const formActions = () => {
@@ -34,6 +42,16 @@ const formActions = () => {
             email: formData.get('email'),
             phone: formData.get('phone')
         }
+
+        const user = getUser(userData)
+        
+        
+        if (user) { // Será executado se o usuario existir no array (Quando retornar True)
+
+        } else { // Ser executado se o usuário não existir no array (Quando retornar False)
+
+        }
+        
     }
 }
 
